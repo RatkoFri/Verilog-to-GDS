@@ -1,0 +1,12 @@
+{
+    "synthesis": {
+      "bitlength": "16",
+      "design_folder": "source",
+      "ORparams": {
+        "PLATFORM": "nangate45",
+	      "DIE_AREA": "620",
+	      "CLOCK": "40",
+        "CLOAD": "0.01"
+      }
+    }
+  }

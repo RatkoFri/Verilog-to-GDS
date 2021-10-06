@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+
+    
+	
+<div class="container">
+
+<div class="page-header">
+    <h1>Synthesis results</h1>
+</div>
+<!-- Table -->
+
+<div class="container">
+	<table class="table table-hover">
+		<thead class="table-primary">
+			<tr>
+				<th scope="col">#<//th>
+				<th scope="col">Multiplier</th>
+				<th scope="col">Delay [ns]</th>
+				<th scope="col">Power [&mu;W]</th>
+				<th scope="col">Area [&mu;m<sup>2</sup>]</th>
+				<th scope="col">PDP [fJ]</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>ALM11_SOA</td>
+				<td>1.45</td>
+				<td>48.90</td>
+				<td>952.01</td>
+				<td>70.90</td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td>MITCHEL</td>
+				<td>1.65</td>
+				<td>47.60</td>
+				<td>916.64</td>
+				<td>78.50</td>
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td>TL16_7_4</td>
+				<td>1.26</td>
+				<td>38.30</td>
+				<td>782.84</td>
+				<td>48.30</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- Bar Chart - START -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Delay</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chart1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Power</h3>
+                </div>
+                <div id="chart2" class="panel-body">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Area</h3>
+                </div>
+                <div id="chart3" class="panel-body">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Power-Delay-Product (PDP)</h3>
+                </div>
+                <div id="chart4" class="panel-body">
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<!-- you need to include the shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var delay = [1.45, 1.65, 1.26];
+        var power = [48.90, 47.60, 38.30];
+        var area = [952.01, 916.64, 782.84];
+        var pdp = [70.90, 78.50, 48.30];
+        var txt = "2";
+        var x_axis = ["ALM11_SOA","MITCHEL","TL16_7_4"]
+        $("#chart1").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "Delay [ns]"
+                }
+            },
+            axisX: {
+                categoricalValues: x_axis,
+            },
+            dataSeries: [{
+                seriesType: "bar",
+                data: delay
+            }]
+            
+        });
+
+        $("#chart2").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "Power [\xB5W]"
+                }
+            },
+            axisX: {
+                categoricalValues: x_axis,
+            },
+            dataSeries: [{
+                seriesType: "bar",
+                data: power
+            }]
+        });
+
+        $("#chart3").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "Area [\xB5m" +  txt.sup() +"]"
+                }
+            },
+            axisX: {
+                categoricalValues: x_axis,
+            },
+            dataSeries: [{
+                seriesType: "bar",
+                data: area
+            }]
+        });
+
+        $("#chart4").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "PDP [fJ]"
+                }
+            },
+            axisX: {
+                categoricalValues: x_axis,
+            },
+            dataSeries: [{
+                seriesType: "bar",
+                data: pdp
+            }]
+        });
+    });
+</script>
+<!-- Bar Chart - END -->
+
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+

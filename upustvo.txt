@@ -1,0 +1,16 @@
+1. Ubaciti dizajne u folder $WORKDIR/source 
+2. Podesiti parametre sinteze mjenjanjem sadržaja conf.json fajla
+    conf.json:
+        synthesis/bitlength -> bitska dužina množača
+        synthesis/design_folder -> ime foldera u kojem se nalaze dizajni.
+                                   Pažnja: folder se mora nalazit u $WORKDIR/source
+                                   Default: source
+        synthesis/ORparams -> parametri OpenROAD sinteze
+                              "PLATFORM" -> CMOS knjižnica
+                              "DIE_AREA" -> Površina čipa na kome se vrši sinteza
+                              "CLOCK" -> virtuelni CLOCK u MHz
+                              "CLOAD" -> kapacitativno opterećenje u nF
+
+3. Pokrenuti python skriptu:
+    
+    python3 python/configSynthesis.py 

@@ -1,0 +1,24 @@
+1. Install docker
+
+    sudo apt update
+
+    sudo apt upgrade
+
+    sudo apt install docker.io
+
+    sudo systemctl enable --now docker
+
+    sudo groupadd docker
+
+    sudo usermod -aG docker $USER
+
+    newgrp docker
+
+2. Install python docker sdk
+    
+    pip install docker
+    pip install numpy
+    pip install matplotlib
+
+
+3. docker pull ratko992/approx_mult_suite:latest
