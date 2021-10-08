@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <title>Hello, world!</title>
-  </head>
-  <body>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <title>OpenROAD results</title>
+</head>
+<body>
 
 
     
@@ -25,6 +25,8 @@
     <h1>Synthesis results</h1>
 </div>
 <!-- Table -->
+
+<div class="container">
 
 <div class="container">
 	<table class="table table-hover">
@@ -65,7 +67,6 @@
 			</tr>
 		</tbody>
 	</table>
-
 </div>
 <!-- Bar Chart - START -->
 <div class="container">
@@ -120,17 +121,14 @@
 
 
 <script>
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
-var barColors = ["red", "green","blue","orange","brown"];
 
-var delay = [1.45, 1.65, 1.26];
-var power = [48.90, 47.60, 38.30];
-var area = [952.01, 916.64, 782.84];
-var pdp = [70.90, 78.50, 48.30];
+var x_axis = ["ALM11_SOA","MITCHEL","TL16_7_4",];
+var delay = [1.45, 1.65, 1.26, ];
+var power = [48.90, 47.60, 38.30, ];
+var area = [952.01, 916.64, 782.84, ];
+var pdp = [70.90, 78.50, 48.30, ];
 var txt = "2";
-var suppe = txt.sup();
-var x_axis = ["ALM11_SOA","MITCHEL","TL16_7_4"]
+
 new Chart("delay", {
   type: "bar",
   data: {

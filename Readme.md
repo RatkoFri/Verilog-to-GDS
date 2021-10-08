@@ -40,8 +40,10 @@ To-Do
     ```sh
         python3 python/configSynthesis.py
     ```
-   - Visualize the results. This will produce web page results.html in folder html/ 
-
+   - Visualize the results. This will produce web page results_v2.html in folder html/ 
+    ```sh
+        python3 python/visualize_results_v2.py
+    ```
 ## Conf.json file 
 
 | Field              | Meaning                                                                                                     |
